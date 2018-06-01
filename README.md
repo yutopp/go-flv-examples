@@ -1,4 +1,4 @@
-# go-flv-example
+# go-flv-examples
 
 Example programs which using [go-flv](https://github.com/yutopp/go-flv) library.
 

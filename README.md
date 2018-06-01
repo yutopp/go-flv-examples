@@ -22,7 +22,6 @@ Programs are generated under `dist` directory.
 Usage of dist/dump:
   -i string
     	Input file
-
 ```
 
 #### Example

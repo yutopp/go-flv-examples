@@ -19,4 +19,7 @@ test:
 build:
 	go build -i -v -o dist/dump ./cmd/dump
 
-.PHONY: all pre fmt test vet lint build
+dep:
+	glide up
+
+.PHONY: all pre fmt test vet lint build dep

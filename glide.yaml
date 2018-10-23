@@ -1,5 +1,0 @@
-package: github.com/yutopp/go-flv-examples
-import:
-- package: github.com/yutopp/go-flv
-  subpackages:
-  - tag

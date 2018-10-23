@@ -5,7 +5,7 @@ Example programs which using [go-flv](https://github.com/yutopp/go-flv) library.
 ## How to build
 
 ```
-make dep # update packages, glide is required
+make dep-init # install dependencies, dep is required
 make
 ```
 

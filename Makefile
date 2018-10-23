@@ -14,12 +14,18 @@ lint:
 	golint $$(go list ./... | grep -v /vendor/)
 
 test:
-	go test -cover ./...
+	go test -v -race -cover ./...
+
+bench:
+	go test -bench . -benchmem -gcflags="-m -l" ./...
+
+dep-init:
+	dep ensure
+
+dep-update:
+	dep ensure -update
 
 build:
 	go build -i -v -o dist/dump ./cmd/dump
 
-dep:
-	glide up
-
-.PHONY: all pre fmt test vet lint build dep
+.PHONY: all pre fmt vet lint test bench dep-init dep-update build

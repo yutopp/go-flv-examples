@@ -9,10 +9,10 @@ package main
 
 import (
 	"flag"
+	log "github.com/sirupsen/logrus"
 	"github.com/yutopp/go-flv"
 	flvtag "github.com/yutopp/go-flv/tag"
 	"io"
-	"log"
 	"os"
 )
 
@@ -45,9 +45,11 @@ func main() {
 			if err == io.EOF {
 				break
 			}
-			log.Fatalf("Failed to decode: %+v", err)
+			log.Warnf("Failed to decode: %+v", err)
 		}
 
 		log.Printf("Tag: %+v", flvTag)
+
+		flvTag.Close() // Discard unread buffers
 	}
 }
